@@ -1,0 +1,13 @@
+# Operator-managed media lives at Configuration/GameStaticFiles/config/<media>/ on the host.
+# These directories may appear in a contributor's working tree if they sync from the host;
+# they must never be committed.
+jukebox_music/
+title_music/
+reboot_themes/
+
+# Secrets never tracked. The host's /etc/resurgence/secrets/ is the source of truth.
+comms.txt
+dbconfig.txt
+webhooks.txt
+tts_secrets.txt
+*.secret
