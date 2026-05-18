@@ -15,13 +15,13 @@ $include antag_rep.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-SERVERNAME [EU] [LRP] Nova-HippieStation 13
+SERVERNAME [EU] [LRP] ReduxStation 13
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 # SERVERSQLNAME tgstation
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-#STATIONNAME Nova HippieStation 13
+#STATIONNAME ReduxStation 13
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 HUB
@@ -240,7 +240,7 @@ FORUMURL https://discord.gg/wUqCpBH7Ua
 # RULESURL http://www.tgstation13.org/wiki/Rules
 
 ## Github address
-GITHUBURL https://github.com/Nova-HippieStation/NovaHippieStation
+GITHUBURL https://github.com/ReduxStation/ReduxStation
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()

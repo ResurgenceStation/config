@@ -1,7 +1,7 @@
 <!-- Most valid html will work in here, excluding images. -->
 
-<h1>Welcome to Nova HippieStation 13!</h1>
+<h1>Welcome to ReduxStation 13!</h1>
 
-<i>This server is running a HippieStation 13 Git build.</i>
+<i>This server is running a ReduxStation 13 Git build.</i>
 
 <b>Join our Discord at: https://discord.gg/wUqCpBH7Ua</b>
