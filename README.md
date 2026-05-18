@@ -6,7 +6,7 @@ every PreCompile event by `update-config.sh` (lives in
 
 ## Layout
 - Top-level files: global defaults, included by every server.
-- `owo/` — per-server overrides for the owo.fm instance. `update-config.sh` does
+- `owo/` — per-server overrides for the reduxstation.com instance. `update-config.sh` does
   `git sparse-checkout set owo/ title_screens/` then symlinks per-server files
   to the top of the active config dir.
 - `title_screens/` — shared art (small enough to commit).

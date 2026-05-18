@@ -228,7 +228,7 @@ CHECK_RANDOMIZER
 
 ## set a server location for world reboot. Don't include the byond://, just give the address and port.
 ## Don't set this to the same server, BYOND will automatically restart players to the server when it has restarted.
-SERVER owo.fm:1337
+SERVER reduxstation.com:1337
 
 ## forum address
 FORUMURL https://discord.gg/wUqCpBH7Ua
@@ -246,7 +246,7 @@ GITHUBURL https://github.com/ReduxStation/ReduxStation
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
 ## This will take priority over the game logs address during reboot.
 ## Example: https://atlantaned.space/statbus/round.php?round=
-ROUNDSTATSURL https://stats.owo.fm/rounds/
+ROUNDSTATSURL https://stats.reduxstation.com/rounds/
 
 ## Game Logs address
 ## Incase you don't have a fancy parsing system, but still want players to be able to find where you keep your server's logs.
