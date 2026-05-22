@@ -28,9 +28,11 @@ TOKEN_CONSUMER http://127.0.0.1:9000/byondLinker.php
 ## TTS_HTTP_TOKEN is the bearer token sent with every request. It MUST match the
 ## TTS_AUTHORIZATION_TOKEN env var on the gateway container. Because this repo
 ## is public, the token does NOT live here -- it goes in
-##   /etc/resurgence/secrets/tts_secrets.txt
+##   /etc/redux/secrets/tts_secrets.txt
 ## which update-config.sh symlinks into the game config dir at sync time. See
 ## ReduxStation/config README "What's NOT here" for the secrets convention.
+## (The README still uses the pre-rename '/etc/resurgence/' path; the actual
+##  host directory on owo.fm is /etc/redux/. README cleanup is a separate PR.)
 
 ## URL of the TTS gateway. http://tts:5500 resolves via docker DNS when the
 ## gateway is declared as a compose service named 'tts' in the same network as
