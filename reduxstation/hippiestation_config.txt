@@ -15,21 +15,40 @@ TOKEN_GENERATOR http://127.0.0.1:9000/storeCkey.php
 #Token consumer URL
 TOKEN_CONSUMER http://127.0.0.1:9000/byondLinker.php
 
-#Uncomment this with a text to speech API if you wish to use one
-#TTS_API http://www.example.com/index.html?text=
+## Text-to-Speech subsystem (Piper-backed Phase 1).
+##
+## The legacy HippieStation mimic1-era TTS keys (TTS_API / ENABLE_TTS / TTS_COMMAND
+## / TTS_VOICE_MALE / TTS_VOICE_FEMALE) are gone; that subsystem was ripped in
+## ReduxStation/ReduxStation#117 and replaced with a SStts subsystem that talks
+## HTTP to the Piper gateway at https://github.com/ReduxStation/tts.
+##
+## SStts disables itself silently when TTS_HTTP_URL is unset, so leaving these
+## commented during the rollout is safe.
+##
+## TTS_HTTP_TOKEN is the bearer token sent with every request. It MUST match the
+## TTS_AUTHORIZATION_TOKEN env var on the gateway container. Because this repo
+## is public, the token does NOT live here -- it goes in
+##   /etc/resurgence/secrets/tts_secrets.txt
+## which update-config.sh symlinks into the game config dir at sync time. See
+## ReduxStation/config README "What's NOT here" for the secrets convention.
 
-## Enables the text-to-speech subsystem, allowing humans to use it
-#ENABLE_TTS
+## URL of the TTS gateway. http://tts:5500 resolves via docker DNS when the
+## gateway is declared as a compose service named 'tts' in the same network as
+## the game container.
+TTS_HTTP_URL http://tts:5500
 
-# The command to run for TTS generation.
-# %I is input textfile,  %O is output wavefile, %V is voice name.
-#TTS_COMMAND mimic -f "%I" -o "%O" -voice "%V"
+## Maximum concurrent in-flight HTTP requests to the gateway. Caps per-DD load
+## on the gateway. Default 4.
+TTS_MAX_CONCURRENT_REQUESTS 4
 
-# A comma seperated list of male voices
-#TTS_VOICE_MALE ap,kal,awb,kal16,rms
+## Per-request timeout in seconds. SStts drops the request and frees its
+## concurrent slot after this many seconds with no response. Default 30, 0
+## disables (not recommended).
+TTS_HTTP_TIMEOUT_SECONDS 30
 
-# A comma seperated list of female voices
-#TTS_VOICE_FEMALE slt
+## When set, skip TTS for whispered lines. Whispers are usually private or
+## sneaky; reading them aloud defeats the purpose.
+TTS_NO_WHISPER
 
 ## Enables the GeoIP subsystem when you give it an ipstack.com API key
 #IPSTACK_API_KEY
